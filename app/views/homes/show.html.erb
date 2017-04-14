@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= link_to homes_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_home_path(@home), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show home</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Address:</dt>
+  <dd><%= @home.address %></dd>
+
+  <dt>City:</dt>
+  <dd><%= @home.city %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @home.state %></dd>
+
+  <dt>Zipcode:</dt>
+  <dd><%= @home.zipcode %></dd>
+
+  <dt>Bedrooms:</dt>
+  <dd><%= @home.bedrooms %></dd>
+
+  <dt>Bathrooms:</dt>
+  <dd><%= @home.bathrooms %></dd>
+
+  <dt>Square feet:</dt>
+  <dd><%= @home.square_feet %></dd>
+
+  <dt>Price:</dt>
+  <dd><%= @home.price %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @home.description %></dd>
+
+</dl>

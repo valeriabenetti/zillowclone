@@ -23,20 +23,23 @@
 
   <div class="container">
     <div class="jumbotron sign-jumbotron">
-      <p><a class="btn btn-primary btn-lg pull-right" role="button">Sign Up/Log In</a></p>
+      <%= link_to "SignUp/LogIn", homes_path, class: "btn btn-primary btn-lg pull-right" %>
+
       <%= image_tag 'tiy-logo.png' %>
     </div>
 
-    <div class="jumbotron landing-jumbotron text-center">
+    <div class="jumbotron landing-jumbotron text-center" >
       <h1>View Homes</h1>
-
     </div>
 
-    <div class="input-group input-group-lg">
-      <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
-      <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true" id="sizing-addon1"></span>
+    <div class="jumbotron search-jumbotron">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
+        <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true" id="sizing-addon1"></span>
+      </div>
     </div>
   </div>
+
 
 </body>
 
