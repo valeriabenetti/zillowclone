@@ -22,8 +22,8 @@ Buttons
   display: block;
   color: hsl(0, 0, 100);
   text-decoration: none;
-  margin: 10px 0;
-  padding: 10px 10px;
+  margin: 20px 0;
+  padding: 15px 15px;
   border-radius: 5px;
   position: relative;
 
@@ -35,7 +35,6 @@ Buttons
     left: 0;
     width: 100%;
     height: 100%;
-    transition: all .2s ease-in-out;
     box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, .2);
     border-radius: 5px;
   }
@@ -47,7 +46,7 @@ Buttons
 
 }
 .btn-social {
-  padding-left: 50px;
+  padding-left: 64px;
   position: relative;
   z-index: 1;
 
@@ -110,7 +109,6 @@ Form
     outline: none!important;
     background: linear-gradient(-5deg, hsl(86, 61%, 44%), hsl(86, 65%, 54%));
     border: none;
-    text-transform: uppercase;
     font-weight: bold;
     box-shadow: 0 3px 0px hsla(86, 21%, 44%, 0.2);
     text-shadow: 0 2px 3px hsla(0, 0, 0, 0.2);
@@ -124,24 +122,21 @@ Form
 Signup
 --------------------*/
 .signup {
-  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 1;
   width: 800px;
   background: hsl(0, 0, 100);
   border-radius: 10px;
   box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
   overflow: hidden;
-  display: flex;
 }
 
 .signup-connect,
 .signup-classic
 {
   width: 50%;
-  padding: 30px 50px;
+  padding: 10px 10px;
 }
 
 .signup-connect {
@@ -170,7 +165,6 @@ Signup
   fieldset::after {
     content: '\f007';
     font-family: FontAwesome;
-    position: absolute;
     right: 15px;
     top: 17px;
     z-index: 2;
@@ -178,7 +172,6 @@ Signup
     color: hsla(0, 0, 0, .2);
     text-align: center;
   }
-
   fieldset.email::after {
     content: '\f0e0';
   }
@@ -187,4 +180,8 @@ Signup
     content: '\f023';
   }
 
+}
+
+.container-book {
+  border: 5px solid red;
 }
