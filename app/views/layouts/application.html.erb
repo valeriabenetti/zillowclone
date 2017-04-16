@@ -22,20 +22,27 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Wonder Home</a>
+      <%= link_to "Wonder Homes", root_path, class: "btn btn-primary pull-right" %>
     </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "SignUp/LogIn", homes_path, class: "btn btn-primary btn-lg pull-right" %></li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+    <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+      <li>
+        <p class="navbar-text btn btn-primary">Welcome: <%= current_user.name %></p>
+      </li>
+      <li class="navbar-text btn btn-primary">
+        <%=link_to "Logout", logout_path %>
+      </li>
+      <% else %>
+      <li class="navbar-text btn btn-primary">
+        <%= link_to 'Login', login_path %>
+      </li>
+      <li class="navbar-text btn btn-primary">
+        <%= link_to 'Signup', signup_path %>
+      </li>
+      <% end %>
+    </ul>
     </div>
-  </div>
-</nav>
+  </nav>
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
   <div class="container">
     <% flash.each do |name, msg| %>
@@ -44,7 +51,6 @@
         <%= msg %>
       <% end %>
     <% end %>
-
     <%= yield %>
   </div>
 </body>

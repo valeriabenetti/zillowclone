@@ -1,8 +1,10 @@
 <div class="page-header">
-  <%= link_to new_home_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-home"></span>
-    New Home
-  <% end %>
+  <% unless logged_in? %>
+    <%= link_to new_home_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-home"></span>
+      New Home
+    <% end %>
+  <% end%>
   <h1 Listing>Homes for Sale</h1>
 </div>
 <%- @homes.each do |home| %>
@@ -21,5 +23,9 @@
         <p><%= home.bedrooms %> bedrooms , <%= home.bathrooms %> bathrooms</p>
 
     </div>
-  </div>
+    <div class="pull-right">
+      <%= link_to home do %>
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+      <% end %>
+    </div>
 <% end %>

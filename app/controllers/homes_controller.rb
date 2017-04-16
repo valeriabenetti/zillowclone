@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  before_action :authorize!, except: [:index, :show]
+
   # GET /homes
   def index
     @homes = Home.all
