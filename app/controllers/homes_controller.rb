@@ -19,11 +19,16 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
     @home = Home.find(params[:id])
+
+    if @home.user != current_user
+      redirect_to homes_path
+    end
   end
 
   # POST /homes
   def create
     @home = Home.new(home_params)
+    @home.user = current_user
 
     if @home.save
       redirect_to @home, notice: 'Home was successfully created.'
@@ -35,6 +40,10 @@ class HomesController < ApplicationController
   # PATCH/PUT /homes/1
   def update
     @home = Home.find(params[:id])
+    if @home.user != current_user
+      redirect_to homes_path
+      return
+    end
     if @home.update(home_params)
       redirect_to @home, notice: 'Home was successfully updated.'
     else
@@ -45,6 +54,10 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   def destroy
     @home = Home.find(params[:id])
+    if @home.user != current_user
+      redirect_to homes_path
+      return
+    end
     @home.destroy
     redirect_to homes_url, notice: 'Home was successfully destroyed.'
   end
