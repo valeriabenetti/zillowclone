@@ -1,31 +1,30 @@
 <div class="page-header">
   <% if logged_in? %>
-    <%= link_to new_home_path, class: 'btn btn-primary' do %>
+    <%= link_to new_home_path, class: 'new-home-button btn btn-primary' do %>
       <span class="glyphicon glyphicon-home"></span>
       New Home
     <% end %>
   <% end%>
   <h1 Listing>Homes for Sale</h1>
 </div>
-<%- @homes.each do |home| %>
-  <div class="media col-md-6">
-    <div class="media-left media-middle">
-      <a href="#">
-      <img class="media-object" src="https://www.moneysmart.gov.au/media/399935/buying-a-home.png" width="255" height="250">
-      </a>
+<div class="row">
+  <%- @homes.each do |home| %>
+    <div class="col-md-6 colum-index">
+      <div class="media">
+        <div class="media-left media-middle">
+          <%= link_to home do %>
+            <img class="media-object" src="https://www.moneysmart.gov.au/media/399935/buying-a-home.png" width="155" height="150">
+          <% end %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= home.address %></h4>
+          <p>
+          <%= home.city %> , <%= home.state %> <%= home.zipcode %>
+          </p>
+          $ <%= home.price %>
+          <p><%= home.bedrooms %> bedrooms , <%= home.bathrooms %> bathrooms</p>
+        </div>
+      </div>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading"><%= home.address %></h4>
-        <p>
-        <%= home.city %> , <%= home.state %> <%= home.zipcode %>
-        </p>
-        $ <%= home.price %>
-        <p><%= home.bedrooms %> bedrooms , <%= home.bathrooms %> bathrooms</p>
-
-    </div>
-    <div class="pull-right">
-      <%= link_to home do %>
-        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-      <% end %>
-    </div>
-<% end %>
+  <% end %>
+</div>

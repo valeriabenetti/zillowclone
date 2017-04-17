@@ -23,21 +23,21 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <%= link_to "Wonder Homes", root_path, class: "btn btn-primary pull-right" %>
+        <%= link_to "Welcome Home", root_path, class: "navbar-brand btn btn-primary" %>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li>
           <p class="navbar-text btn btn-primary">Welcome: <%= current_user.name %></p>
         </li>
-        <li class="navbar-text">
+        <li>
           <%=link_to "Logout", logout_path, class: "btn btn-primary" %>
         </li>
         <% else %>
-        <li class="navbar-text">
+        <li>
           <%= link_to 'Login', login_path, class: "btn btn-primary" %>
         </li>
-        <li class="navbar-text">
+        <li>
           <%= link_to 'Signup', signup_path, class: "btn btn-primary" %>
         </li>
         <% end %>

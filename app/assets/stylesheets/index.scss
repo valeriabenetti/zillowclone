@@ -1,5 +1,13 @@
 .controller-homes{
-  background-image: image-url('looks.jpg');
+  background-image: image-url('city-home.jpg');
   background-size: cover;
-  color: black;
+  color: white;
+
+  .new-home-button{
+    margin: 0;
+  }
+
+  .colum-index{
+    margin-bottom: 5px;
+  }
 }
