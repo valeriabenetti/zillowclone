@@ -18,13 +18,13 @@ class SessionsController < ApplicationController
     else
       redirect_to login_path
     end
+  end
 
-    def destory
-      # Remove the user_id from the session
-      session[:user_id] = nil
+  def destroy
+    # Remove the user_id from the session
+    session[:user_id] = nil
 
-      # Send the user to the landing page
-      redirect_to root_path
-    end
+    # Send the user to the landing page
+    redirect_to root_path
   end
 end

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <% unless logged_in? %>
+  <% if logged_in? %>
     <%= link_to new_home_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-home"></span>
       New Home

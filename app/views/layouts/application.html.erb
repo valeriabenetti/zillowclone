@@ -19,31 +19,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to "Wonder Homes", root_path, class: "btn btn-primary pull-right" %>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <% if logged_in? %>
-      <li>
-        <p class="navbar-text btn btn-primary">Welcome: <%= current_user.name %></p>
-      </li>
-      <li class="navbar-text btn btn-primary">
-        <%=link_to "Logout", logout_path %>
-      </li>
-      <% else %>
-      <li class="navbar-text btn btn-primary">
-        <%= link_to 'Login', login_path %>
-      </li>
-      <li class="navbar-text btn btn-primary">
-        <%= link_to 'Signup', signup_path %>
-      </li>
-      <% end %>
-    </ul>
-    </div>
-  </nav>
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Wonder Homes", root_path, class: "btn btn-primary pull-right" %>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+        <li>
+          <p class="navbar-text btn btn-primary">Welcome: <%= current_user.name %></p>
+        </li>
+        <li class="navbar-text">
+          <%=link_to "Logout", logout_path, class: "btn btn-primary" %>
+        </li>
+        <% else %>
+        <li class="navbar-text">
+          <%= link_to 'Login', login_path, class: "btn btn-primary" %>
+        </li>
+        <li class="navbar-text">
+          <%= link_to 'Signup', signup_path, class: "btn btn-primary" %>
+        </li>
+        <% end %>
+      </ul>
+      </div>
+  </nav>
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
