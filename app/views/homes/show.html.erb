@@ -1,14 +1,14 @@
 <div class="page-header">
-  <%= link_to homes_path, class: 'btn btn-default' do %>
+  <%= link_to homes_path, class: 'btn btn-default new-home-button' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
   <% if @home.user == current_user %>
-    <%= link_to edit_home_path(@home), class: 'btn btn-primary' do %>
+    <%= link_to edit_home_path(@home), class: 'btn btn-primary new-home-button' do %>
       <span class="glyphicon glyphicon-pencil"></span>
       Edit
     <% end %>
-    <%= link_to @home, method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' } do %>
+    <%= link_to @home, method: :delete, class: 'btn btn-primary new-home-button', data: { confirm: 'Are you sure?' } do %>
       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
     <% end %>
   <% end %>

@@ -54,13 +54,15 @@ gem 'bootstrap-generators', git: 'https://github.com/gstark/bootstrap-generators
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
+
+# Image Uploading Support
+gem 'shrine', '~> 2.6', '>= 2.6.1'
+
 group :development do
   gem 'awesome_print'
   gem 'dotenv-rails'
 end
 
-gem 'refile', github: 'gstark/refile', branch: 'updates-for-rails-5', require: 'refile/rails'
-gem 'refile-postgres'
 group :production do
   gem 'rails_12factor'
 end
