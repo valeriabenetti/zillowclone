@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # mount Shrine::DownloadEndpoint => "/attachments"
+  mount Shrine::DownloadEndpoint => "/attachments"
 
   get 'pages/landing'
   resources :homes
