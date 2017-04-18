@@ -57,6 +57,8 @@ gem 'jquery-ui-rails'
 
 # Image Uploading Support
 gem 'shrine', '~> 2.6', '>= 2.6.1'
+gem 'shrine-sql'
+gem 'roda'
 
 group :development do
   gem 'awesome_print'

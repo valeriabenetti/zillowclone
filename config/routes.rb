@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :homes
-  get 'pages/landing'
+  # mount Shrine::DownloadEndpoint => "/attachments"
 
+  get 'pages/landing'
+  resources :homes
   root 'pages#landing'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
