@@ -4,6 +4,11 @@ class HomesController < ApplicationController
   # GET /homes
   def index
     @homes = Home.all
+
+    if params[:search]
+      @homes = Home.where("address like ? or  city like ? or state like ? or zipcode = ?", "%#{@search}%", "%#{@search}%", "%#{@search}%", @search.to_i)
+    end
+
   end
 
   # GET /homes/1

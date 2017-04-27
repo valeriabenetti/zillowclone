@@ -39,11 +39,10 @@
     <div class="jumbotron search-jumbotron">
       <%= form_tag homes_path, method: "get", class: "form-inline form-home-search" do%>
         <div class="form-group input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
+          <input name="search" type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
           <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true" id="sizing-addon1"></span>
-      <% end %>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 
