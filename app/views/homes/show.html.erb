@@ -17,8 +17,13 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Image:</dt>
-  <dd><%= image_tag(@home.image_url) %></dd>
+  <% if @home.image_url %>
+    <dt>Image:</dt>
+    <dd><%= image_tag(@home.image_url) %></dd>
+  <% else %>
+    <dt>Image:</dt>
+    <dd><%= image_tag("download.jpg") %></dd>
+  <% end %>
 
   <dt>Address:</dt>
   <dd><%= @home.address %></dd>

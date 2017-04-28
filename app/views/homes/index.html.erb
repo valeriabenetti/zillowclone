@@ -14,7 +14,11 @@
       <div class="media">
         <div class="media-left media-middle">
           <%= link_to home do %>
-            <img class="media-object" src="<%= home.image_url%>" width="155" height="150">
+            <% if home.image_url %>
+              <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
+            <% else %>
+              <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
+            <% end %>
           <% end %>
         </div>
         <div class="media-body">

@@ -22,6 +22,10 @@
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
 
   <div class="container">
+    <%= form_tag(homes_path, method: "GET", class: "search-form pull-right") do%>
+    <%= text_field_tag :query %>
+    <%= button_tag "Search" %>
+    <% end %>
     <div class="jumbotron sign-jumbotron">
       <%= link_to "SignUp", signup_path, class: "btn btn-primary btn-lg pull-right" %>
       <%= link_to "Log In", login_path, class: "btn btn-primary btn-lg pull-right" %>
@@ -36,14 +40,6 @@
       </h1>
     </div>
 
-    <div class="jumbotron search-jumbotron">
-      <%= form_tag homes_path, method: "get", class: "form-inline form-home-search" do%>
-        <div class="form-group input-group input-group-lg">
-          <input name="search" type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
-          <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true" id="sizing-addon1"></span>
-        </div>
-      <% end %>
-    </div>
   </div>
 
 
