@@ -26,13 +26,22 @@
     <%= text_field_tag :query %>
     <%= button_tag "Search" %>
     <% end %>
-    <div class="jumbotron sign-jumbotron">
-      <%= link_to "SignUp", signup_path, class: "btn btn-primary btn-lg pull-right" %>
-      <%= link_to "Log In", login_path, class: "btn btn-primary btn-lg pull-right" %>
 
+    <% if logged_in? %>
+      <div class="jumbotron sign-jumbotron">
+        <p class="navbar-text btn btn-primary pull-right">Welcome: <%= current_user.name %></p>
+        <%=link_to "Logout", logout_path, class: "btn btn-primary pull-right" %>
 
-      <%= image_tag 'wh-logo.png' %>
-    </div>
+        <%= image_tag 'wh-logo.png' %>
+      </div>
+    <% else %>
+      <div class="jumbotron sign-jumbotron">
+        <%= link_to "SignUp", signup_path, class: "btn btn-primary btn-lg pull-right" %>
+        <%= link_to "Log In", login_path, class: "btn btn-primary btn-lg pull-right" %>
+
+        <%= image_tag 'wh-logo.png' %>
+      </div>
+    <% end %>
 
     <div class="jumbotron landing-jumbotron text-center" >
       <h1>
