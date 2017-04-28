@@ -1,3 +1,4 @@
+
 <div class="page-header">
   <% if logged_in? %>
     <%= link_to new_home_path, class: 'new-home-button btn btn-primary' do %>
@@ -32,4 +33,5 @@
       </div>
     </div>
   <% end %>
+  <%= paginate @homes %>
 </div>

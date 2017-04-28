@@ -3,18 +3,15 @@ class HomesController < ApplicationController
 
   # GET /homes
   def index
-    # @homes = Home.all
-    #
-    # if params[:search]
-    #   @homes = Home.where("address like ? or  city like ? or state like ? or zipcode = ?", "%#{@search}%", "%#{@search}%", "%#{@search}%", @search.to_i)
-    # end
     if params[:query]
       @homes = Home.where('address like :pattern or city like :pattern or state like :pattern', pattern: "%#{params[:query]}%")
     else
       @homes = Home.all
     end
 
+    @homes = @homes.page(params[:page]).per(6)
   end
+
 
   # GET /homes/1
   def show
