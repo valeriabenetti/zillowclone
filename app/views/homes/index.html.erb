@@ -10,28 +10,10 @@
 </div>
 
 <div class="row">
-  <%- @homes.each do |home| %>
-    <div class="col-md-6 colum-index">
-      <div class="media">
-        <div class="media-left media-middle">
-          <%= link_to home do %>
-            <% if home.image_url %>
-              <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
-            <% else %>
-              <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading"><%= home.address %></h4>
-          <p>
-            <%= home.city %> , <%= home.state %> <%= home.zipcode %>
-          </p>
-          $ <%= home.price %>
-          <p><%= home.bedrooms %> bedrooms , <%= home.bathrooms %> bathrooms</p>
-        </div>
-      </div>
-    </div>
+  <% if @homes.empty? %>
+    <%= render 'empty_homes'%>
+  <% else %>
+    <%= render @homes %>
   <% end %>
   <%= paginate @homes %>
 </div>

@@ -5,6 +5,7 @@ class HomesController < ApplicationController
   def index
     if params[:query]
       @homes = Home.where('address like :pattern or city like :pattern or state like :pattern', pattern: "%#{params[:query]}%")
+
     else
       @homes = Home.all
     end

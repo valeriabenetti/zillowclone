@@ -15,3 +15,4 @@
 
 //= require 'cable'
 //= require 'homes'
+//= require bootstrap

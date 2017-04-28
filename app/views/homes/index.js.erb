@@ -1,0 +1,7 @@
+console.log('This is from the server, NOICE!. There are <%= @homes.size %> homes matched')
+
+<% if @homes.empty? %>
+  $('.homes-list-group').html('<%= j(render 'empty_homes') %>')
+<% else %>
+  $('.homes-list-group').html('<%= j(render @homes) %>')
+<% end %>

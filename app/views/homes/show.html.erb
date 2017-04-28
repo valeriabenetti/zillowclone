@@ -3,6 +3,7 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
+  
   <% if @home.user == current_user %>
     <%= link_to edit_home_path(@home), class: 'btn btn-primary new-home-button' do %>
       <span class="glyphicon glyphicon-pencil"></span>
