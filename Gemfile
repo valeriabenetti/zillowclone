@@ -62,6 +62,8 @@ gem 'jquery-ui-rails'
 gem 'shrine', '~> 2.6', '>= 2.6.1'
 gem 'shrine-sql'
 gem 'roda'
+gem 'image_processing'
+gem 'mini_magick', '~> 4.7'
 
 group :development do
   gem 'awesome_print'
