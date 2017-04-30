@@ -1,15 +1,29 @@
 <div class="col-md-6 colum-index">
   <div class="media">
     <div class="media-left media-middle">
-      <%= link_to home do %>
-        <% if home.image_url %>
-          <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
-        <% else %>
-          <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
+      <% if logged_in? %>
+        <%= link_to home do %>
+          <% if home.image_url %>
+            <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
+          <% else %>
+            <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
+          <% end %>
+          <%= link_to "Small" %>
+          <%= link_to "Medium" %>
+          <%= link_to "Large" %>
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
         <% end %>
-        <%= link_to "Small" %>
-        <%= link_to "Medium" %>
-        <%= link_to "Large" %>
+      <% else %>
+        <%= link_to home do %>
+          <% if home.image_url %>
+            <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
+          <% else %>
+            <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
+          <% end %>
+          <%= link_to "Small" %>
+          <%= link_to "Medium" %>
+          <%= link_to "Large" %>
+        <% end %>
       <% end %>
     </div>
     <div class="media-body">
