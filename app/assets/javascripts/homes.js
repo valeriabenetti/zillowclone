@@ -2,9 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
 
-  $('.clickable-heart').on('click', function(event) {
-    $(this).css({color: 'red'})
-  })
+
   $('.media-heading').on('click', function(event) {
     $(this).css({color: 'orange'})
   })
