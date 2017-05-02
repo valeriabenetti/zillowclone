@@ -18,4 +18,22 @@ $(document).ready(function() {
       dataType: 'script'
     })
   })
- })
+
+  $('body').on('click', '.favorite-home', function(event) {
+    let favorited = $(this).hasClass('favorited')
+
+    $(this).toggleClass('favorited')
+
+    let homeid = $(this).data('home-id') // data-home-id="....."
+
+    console.log(`clicked on a heart for home ${homeid}`)
+
+    let url = favorited ? `/homes/${homeid}/unfavorite` : `/homes/${homeid}/favorite`
+
+    $.ajax({
+      method: 'POST',
+      url: url,
+      dataType: 'script'
+    })
+  })
+})

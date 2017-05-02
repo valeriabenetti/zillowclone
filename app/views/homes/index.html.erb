@@ -9,11 +9,12 @@
   <h1 Listing>Homes for Sale</h1>
 </div>
 
-<div class="row">
+<div class="row homes-list-group">
   <% if @homes.empty? %>
     <%= render 'empty_homes'%>
   <% else %>
     <%= render @homes %>
   <% end %>
-  <span><%= paginate @homes %></span>
 </div>
+
+<span><%= paginate @homes %></span>

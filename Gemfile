@@ -59,7 +59,7 @@ gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
 
 # Image Uploading Support
-gem 'shrine', '~> 2.6', '>= 2.6.1'
+gem 'shrine'
 gem 'shrine-sql'
 gem 'roda'
 gem 'image_processing'

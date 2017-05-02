@@ -6,9 +6,9 @@ class Home < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
+  has_many :favorites
 
   def self.search(search)
-  where("address like ? or  city like ? or state like ? or zipcode = ?", "%#{@search}%", "%#{@search}%", "%#{@search}%", @search.to_i)
-
+    where("address like ? or  city like ? or state like ? or zipcode = ?", "%#{search}%", "%#{search}%", "%#{search}%", @search.to_i)
   end
 end

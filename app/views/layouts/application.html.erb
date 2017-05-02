@@ -52,12 +52,12 @@
         </li>
         <% end %>
       </ul>
-        <%= form_tag(homes_path, method: "GET", class: "search-form pull-right") do%>
-          <div class="form-group">
-            <%= text_field_tag :query, nil, class: "form-control", placeholder: "Search..." %>
-          </div>
-        <% end %>
-      </div>
+      <%= form_tag(homes_path, method: "GET", class: "navbar-form navbar-right search-form") do%>
+        <div class="form-group">
+          <%= text_field_tag :query, nil, class: "form-control", placeholder: "Search..." %>
+        </div>
+      <% end %>
+    </div>
   </nav>
   <div class="container">
     <% flash.each do |name, msg| %>

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  mount Shrine::DownloadEndpoint => "/attachments"
-
   get 'pages/landing'
-  resources :homes
   root 'pages#landing'
+
+  resources :homes do
+    member do
+      post 'favorite'
+      post 'unfavorite'
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -13,4 +17,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  mount Shrine::DownloadEndpoint => "/attachments"
 end
