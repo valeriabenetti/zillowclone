@@ -8,21 +8,8 @@
         <% else %>
           <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
         <% end %>
-        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel">
-          <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content">
-              <%= image_tag(home.image_url(:medium)) %>
-            </div>
-          </div>
-        </div>
+        <%= link_to "Medium" %>
         <%= link_to "Large" %>
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <%= image_tag(home.image_url(:large)) %>
-            </div>
-          </div>
-        </div>
         <% if logged_in? %>
           <span data-home-id="<%= home.id %>" class="favorite-home glyphicon glyphicon-heart <%= favorited_class(home, current_user) %>" aria-hidden="true"></span>
         <% end %>
@@ -38,3 +25,15 @@
     </div>
   </div>
 </div>
+<!-- <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div> -->

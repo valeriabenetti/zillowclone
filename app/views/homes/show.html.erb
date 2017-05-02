@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  
+
   <% if @home.user == current_user %>
     <%= link_to edit_home_path(@home), class: 'btn btn-primary new-home-button' do %>
       <span class="glyphicon glyphicon-pencil"></span>
@@ -45,7 +45,9 @@
   <dd><%= @home.bathrooms %></dd>
 
   <dt>Square feet:</dt>
-  <dd><%= @home.square_feet %></dd>
+  <dd class="sqFeet" data-showing-meters="false" data-sqmeters="<%= @home.square_meters%>" data-sqfeet="<%= @home.square_feet %>">
+    <%= @home.square_feet %>
+  </dd>
 
   <dt>Price:</dt>
   <dd><%= @home.price %></dd>

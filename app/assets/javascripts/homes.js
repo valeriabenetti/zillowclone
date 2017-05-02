@@ -36,4 +36,17 @@ $(document).ready(function() {
       dataType: 'script'
     })
   })
+
+  $('body').on('click', '.sqFeet', function(event){
+    let sqFeet = $(this).data('sqfeet')
+    let sqMeters = $(this).data('sqmeters')
+
+    if ($(this).data('show-meters') === 'true') {
+      $(this).text('${sqFeet} Square Feet')
+      $(this).data('show-meters', 'false')
+    } else {
+      $(this).text('${sqMeters} Square Meters')
+      $(this).data('show-meters', 'true')
+    }
+  })
 })
