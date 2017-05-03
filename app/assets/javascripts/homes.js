@@ -42,10 +42,10 @@ $(document).ready(function() {
     let sqMeters = $(this).data('sqmeters')
 
     if ($(this).data('show-meters') === 'true') {
-      $(this).text('${sqFeet} Square Feet')
+      $(this).text('${sqFeet}')
       $(this).data('show-meters', 'false')
     } else {
-      $(this).text('${sqMeters} Square Meters')
+      $(this).text('${sqMeters}')
       $(this).data('show-meters', 'true')
     }
   })
