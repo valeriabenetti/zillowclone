@@ -2,46 +2,39 @@
   <div class="media">
     <div class="media-left media-middle">
       <%= link_to home do %>
-        <% if home.image_url %>
-          <%= image_tag(home.image_url, class: "media-object", size: "155x150") %>
+        <% if home.image_url(:original) %>
+          <%= image_tag(home.image_url(:small), class: "media-object") %>
         <% else %>
           <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
         <% end %>
+      <% end %>
 
-
-        <% if home.image_url(:medium) %>
-          <%= link_to "Medium" %>
-          <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body"><%= image_tag(home.image_url(:medium))%></div>
-              </div>
-            </div>
+      <% if home.image_url(:medium) %>
+        <a class="modal-popup" data-toggle="modal" data-target=".modal-medium-images-<%= home.id %>">Medium</a>
+        <div class="modal modal-medium-images-<%= home.id %>">
+          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+          <div class="modal-body-images">
+            <%= image_tag(home.image_url(:medium))%>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
-        <% if home.image_url(:large)%>
-          <%= link_to "Large" %>
-          <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body"><%= image_tag(home.image_url(:large))%></div>
-              </div>
-            </div>
+
+      <% if home.image_url(:xlarge)%>
+        <a class="modal-popup" data-toggle="modal" data-target=".modal-large-images-<%= home.id %>">
+          Large
+        </a>
+        <div class="modal modal-large-images-<%= home.id %>">
+          <div class="modal-body-images">
+            <%= image_tag(home.image_url(:xlarge))%>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
 
 
-        <% if logged_in? %>
-          <span data-home-id="<%= home.id %>" class="favorite-home glyphicon glyphicon-heart <%= favorited_class(home, current_user) %>" aria-hidden="true"></span>
-        <% end %>
+      <% if logged_in? %>
+        <span data-home-id="<%= home.id %>" class="favorite-home glyphicon glyphicon-heart <%= favorited_class(home, current_user) %>" aria-hidden="true"></span>
       <% end %>
     </div>
 
