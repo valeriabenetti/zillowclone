@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      # Send email to new user
+      # NotificationMailer.signup(@user).deliver_later
+
       redirect_to homes_path
     else
       render :new

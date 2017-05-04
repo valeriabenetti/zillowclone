@@ -1,9 +1,11 @@
-Welcome to Your New Home!
+<h1>Welcome to Your New Home!</h1>
+
+<p>
+  Congradulations on Signing Up to find your new home! You can find the latest
+  <%= link_to "homes for sale", homes_url%>
+</p>
 
 
-Congradulations on Signing Up to find your new home! You can find the latest
-<%= homes_url %>
-
-
-
-  Trying to sell your home? Sell your home with us on Welcome Home: <%= new_home_url %>
+<p>
+  Trying to sell your home? <%= link_to "Sell your home with us on Welcome Home", new_home_url %>
+</p>
