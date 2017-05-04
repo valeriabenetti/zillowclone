@@ -11,7 +11,7 @@ class ImageUploader < Shrine
 
     size_800 = resize_to_limit!(original, 1000, 1000)
     size_450 = resize_to_limit(size_800, 450, 450)
-    size_300 = resize_to_limit(size_450, 255, 250)
+    size_300 = resize_to_limit(size_450, 155, 150)
 
     { original: io, large: size_800, medium: size_450, small: size_300 }
 

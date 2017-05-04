@@ -3,7 +3,7 @@
     <div class="media-left media-middle">
       <%= link_to home do %>
         <% if home.image_url(:original) %>
-          <%= image_tag(home.image_url(:small), class: "media-object") %>
+          <%= image_tag(home.image_url(:small), class: "media-object", size: "155x150") %>
         <% else %>
           <%= image_tag("download.jpg", class: "media-object", size: "155x150") %>
         <% end %>
@@ -20,13 +20,11 @@
       <% end %>
 
 
-      <% if home.image_url(:xlarge)%>
-        <a class="modal-popup" data-toggle="modal" data-target=".modal-large-images-<%= home.id %>">
-          Large
-        </a>
+      <% if home.image_url(:large)%>
+        <a class="modal-popup" data-toggle="modal" data-target=".modal-large-images-<%= home.id %>">Large</a>
         <div class="modal modal-large-images-<%= home.id %>">
           <div class="modal-body-images">
-            <%= image_tag(home.image_url(:xlarge))%>
+            <%= image_tag(home.image_url(:large))%>
           </div>
         </div>
       <% end %>
